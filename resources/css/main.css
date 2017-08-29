@@ -1,58 +1,50 @@
-html, body {
-	width: 100%;
-	height: 100%;
-}
-
 body {
-	background: #fff;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	font-family: Arial, sans-serif;
+	font-family: "Neutra Text", sans-serif;
 	font-size: 1em;
 	flex: 0 0 auto;
-	color: #2c3e50;
+	color: #fff;
 }
 
 main {
-	width: 40em;
+	margin: 10% 10% 0 10%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 80%;
 }
 
 blockquote {
+	flex-basis: 55%;
 	margin: 0;
-	padding: 1em 2em;
 	font-weight: 700;
-	background: #fff;
-	border-radius: .3em;
 }
 
 blockquote footer {
 	display: flex;
-	justify-content: flex-end;
 }
 
 #quote {
 	margin: 0;
+	font-size: 65px;
+	border-left: 5px solid #fff;
+	padding-left: 40px;
 }
 
 #author {
-	font-size: 13px;
-}
-
-#author:before {
-	content: "–";
-	padding: 0 .5em 0 0;
+	font-size: 27px;
+	font-family: Kaufmann;
+	color: #3c3c3c;
+	margin: 40px 0 0 45px;
 }
 
 #new-quote-btn {
-	background: #fff;
-	padding: .5em 1em;
-	border-radius: .3em;
+	background: url("../img/icon-right-arrow.svg") no-repeat;
+	width: 105px;
+	height: 105px;
 	outline: 0;
 	border: 0;
-	margin-top: .5em;
+	padding: 0;
 	cursor: pointer;
-	font-size: 13px;
+	margin-top: -71px;
 }
 

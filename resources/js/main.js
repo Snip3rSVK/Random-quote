@@ -1,6 +1,6 @@
 let colors = getJSON("https://raw.githubusercontent.com/Snip3rSVK/Random-quote/master/resources/json/colors.json", (data) => colors = data);
 let quotes = getJSON("https://raw.githubusercontent.com/Snip3rSVK/Random-quote/master/resources/json/quotes.json", (data) => {
-	quotes = data;
+	quotes = data.filter((curr) => curr[0].length <= 44);
 	generateQuote();
 });
 
@@ -26,8 +26,6 @@ function getJSON(url, callback) {
 function generateQuote() {
 	const randomColorNum = Math.floor(Math.random() * (colors.length - 1));
 	const randomQuoteNum = Math.floor(Math.random() * (quotes.length - 1));
-	console.log(quote);
-	console.log(colors[randomColorNum]);
 	body.setAttribute("style", `background: ${ colors[randomColorNum] }`);
 	quote.textContent = quotes[randomQuoteNum][0];
 	author.textContent = quotes[randomQuoteNum][1];
