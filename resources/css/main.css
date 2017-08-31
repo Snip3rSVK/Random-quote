@@ -30,21 +30,34 @@ blockquote footer {
 	padding-left: 40px;
 }
 
-#author {
+blockquote footer {
 	font-size: 27px;
 	font-family: Kaufmann;
-	color: #3c3c3c;
-	margin: 40px 0 0 45px;
+	color: #232323;
+	margin: 30px 0 0 45px;
 }
 
 #new-quote-btn {
 	background: url("../img/icon-right-arrow.svg") no-repeat;
 	width: 105px;
 	height: 105px;
+	margin-top: -71px;
+}
+
+#tweet-quote-btn {
+	background: #fff url("../img/icon-twitter.svg") no-repeat;
+	background-size: 90% 90%;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	left: calc(10% + 50px);
+	width: 50px;
+	height: 50px;
+}
+
+button {
 	outline: 0;
 	border: 0;
 	padding: 0;
 	cursor: pointer;
-	margin-top: -71px;
 }
-

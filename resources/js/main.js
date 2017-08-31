@@ -5,6 +5,7 @@ let quotes = getJSON("https://raw.githubusercontent.com/Snip3rSVK/Random-quote/m
 });
 
 const newQuoteBtn = document.querySelector("#new-quote-btn");
+const tweetQuoteBtn = document.querySelector("#tweet-quote-btn");
 const body = document.querySelector("body");
 const quote = document.querySelector("#quote");
 const author = document.querySelector("#author");
@@ -26,7 +27,8 @@ function getJSON(url, callback) {
 function generateQuote() {
 	const randomColorNum = Math.floor(Math.random() * (colors.length - 1));
 	const randomQuoteNum = Math.floor(Math.random() * (quotes.length - 1));
-	body.setAttribute("style", `background: ${ colors[randomColorNum] }`);
+	body.setAttribute("style", `background: ${colors[randomColorNum]}`);
+	tweetQuoteBtn.setAttribute("href", `https://twitter.com/intent/tweet?text=${quotes[randomQuoteNum][0]} - ${quotes[randomQuoteNum][1]}`);
 	quote.textContent = quotes[randomQuoteNum][0];
 	author.textContent = quotes[randomQuoteNum][1];
 }
