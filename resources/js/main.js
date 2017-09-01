@@ -3,6 +3,10 @@ let quotes = getJSON("https://raw.githubusercontent.com/Snip3rSVK/Random-quote/m
 	quotes = data.filter((curr) => curr[0].length <= 44);
 	generateQuote();
 });
+const prevRandomNums = {
+	quote: null,
+	color: null
+}
 
 const newQuoteBtn = document.querySelector("#new-quote-btn");
 const tweetQuoteBtn = document.querySelector("#tweet-quote-btn");
@@ -27,7 +31,15 @@ function getJSON(url, callback) {
 function generateQuote() {
 	const randomColorNum = Math.floor(Math.random() * (colors.length - 1));
 	const randomQuoteNum = Math.floor(Math.random() * (quotes.length - 1));
-	const fadeOutPromise = new Promise((resolve, reject) => {
+
+	if (randomColorNum == prevRandomNums.color || randomQuoteNum == prevRandomNums.quote) {
+		generateQuote();
+		return;
+	}
+
+	prevRandomNums.color = randomColorNum;
+	prevRandomNums.quote = randomQuoteNum;
+	const fadeOutPromise = new Promise((resolve) => {
 		quote.setAttribute("style", "animation: fadeOut 450ms cubic-bezier(.55, .055, .675, .19) forwards");
 		setTimeout(function() {
 			body.setAttribute("style", `background: ${colors[randomColorNum]}`);
