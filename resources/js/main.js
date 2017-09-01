@@ -27,10 +27,19 @@ function getJSON(url, callback) {
 function generateQuote() {
 	const randomColorNum = Math.floor(Math.random() * (colors.length - 1));
 	const randomQuoteNum = Math.floor(Math.random() * (quotes.length - 1));
-	body.setAttribute("style", `background: ${colors[randomColorNum]}`);
-	tweetQuoteBtn.setAttribute("href", `https://twitter.com/intent/tweet?text=${quotes[randomQuoteNum][0]} - ${quotes[randomQuoteNum][1]}`);
-	quote.textContent = quotes[randomQuoteNum][0];
-	author.textContent = quotes[randomQuoteNum][1];
+	const fadeOutPromise = new Promise((resolve, reject) => {
+		quote.setAttribute("style", "animation: fadeOut 450ms cubic-bezier(.55, .055, .675, .19) forwards");
+		setTimeout(function() {
+			body.setAttribute("style", `background: ${colors[randomColorNum]}`);
+		}, 300);
+		setTimeout(function() {
+			quote.textContent = quotes[randomQuoteNum][0];
+			author.textContent = quotes[randomQuoteNum][1];
+			tweetQuoteBtn.setAttribute("href", `https://twitter.com/intent/tweet?text=${quotes[randomQuoteNum][0]} - ${quotes[randomQuoteNum][1]}`);
+			resolve();
+		}, 550);
+	});
+	fadeOutPromise.then(() => quote.setAttribute("style", "animation: fadeIn .5s cubic-bezier(.215, .61, .355, 1) forwards"));
 }
 
 newQuoteBtn.addEventListener("click", generateQuote);

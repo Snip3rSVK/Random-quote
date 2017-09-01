@@ -3,6 +3,7 @@ body {
 	font-size: 1em;
 	flex: 0 0 auto;
 	color: #fff;
+	transition: background-color 900ms cubic-bezier(.215, .61, .355, 1);
 }
 
 main {
@@ -60,4 +61,14 @@ button {
 	border: 0;
 	padding: 0;
 	cursor: pointer;
+}
+
+@keyframes fadeOut {
+  	0% { opacity: 1 }
+  	100% { opacity: 0 }
+}
+
+@keyframes fadeIn {
+  	0% { opacity: 0 }
+  	100% { opacity: 1 }
 }
