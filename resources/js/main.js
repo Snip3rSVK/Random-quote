@@ -6,7 +6,7 @@ let quotes = getJSON("https://raw.githubusercontent.com/Snip3rSVK/Random-quote/m
 const prevRandomNums = {
 	quote: null,
 	color: null
-}
+};
 
 const newQuoteBtn = document.querySelector("#new-quote-btn");
 const tweetQuoteBtn = document.querySelector("#tweet-quote-btn");
@@ -41,6 +41,7 @@ function generateQuote() {
 	prevRandomNums.quote = randomQuoteNum;
 	const fadeOutPromise = new Promise((resolve) => {
 		quote.setAttribute("style", "animation: fadeOut 450ms cubic-bezier(.55, .055, .675, .19) forwards");
+		author.setAttribute("style", "animation: splashOut .4s cubic-bezier(.55, .055, .675, .19) forwards");
 		setTimeout(function() {
 			body.setAttribute("style", `background: ${colors[randomColorNum]}`);
 		}, 300);
@@ -51,7 +52,10 @@ function generateQuote() {
 			resolve();
 		}, 550);
 	});
-	fadeOutPromise.then(() => quote.setAttribute("style", "animation: fadeIn .5s cubic-bezier(.215, .61, .355, 1) forwards"));
+	fadeOutPromise.then(() => {
+		quote.setAttribute("style", "animation: fadeIn .5s cubic-bezier(.215, .61, .355, 1) forwards");
+		author.setAttribute("style", "animation: splashIn .3s cubic-bezier(.215, .61, .355, 1) forwards");
+	});
 }
 
 newQuoteBtn.addEventListener("click", generateQuote);

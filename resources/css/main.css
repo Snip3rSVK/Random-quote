@@ -51,7 +51,7 @@ blockquote footer {
 	background-position: center;
 	position: absolute;
 	top: 0;
-	left: calc(10% + 50px);
+	animation: comeIn 500ms cubic-bezier(.215, .61, .355, 1) forwards;
 	width: 50px;
 	height: 50px;
 }
@@ -71,6 +71,21 @@ button {
 @keyframes fadeIn {
   	0% { opacity: 0 }
   	100% { opacity: 1 }
+}
+
+@keyframes comeIn {
+	0% { left: 0; opacity: 0 }
+	100% { left: calc(10% + 50px); opacity: 1 }
+}
+
+@keyframes splashIn {
+	0% { transform: scale(1, 0); transform-origin: bottom left }
+	100% { transform: scale(1, 1); transform-origin: bottom left }
+}
+
+@keyframes splashOut {
+	0% { transform: scale(1, 1); transform-origin: bottom left }
+	100% { transform: scale(1, 0); transform-origin: bottom left }
 }
 
 @font-face {
