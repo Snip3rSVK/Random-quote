@@ -1,5 +1,5 @@
 body {
-	font-family: "Neutra Text", sans-serif;
+	font-family: "Neutra Text Light", sans-serif;
 	font-size: 1em;
 	flex: 0 0 auto;
 	color: #fff;
@@ -33,7 +33,7 @@ blockquote footer {
 
 blockquote footer {
 	font-size: 27px;
-	font-family: Kaufmann;
+	font-family: "Kaufmann Bold";
 	color: #232323;
 	margin: 30px 0 0 45px;
 }
@@ -71,4 +71,16 @@ button {
 @keyframes fadeIn {
   	0% { opacity: 0 }
   	100% { opacity: 1 }
+}
+
+@font-face {
+	font-family: "Kaufmann Bold";
+	src: url(../fonts/kaufmann-bold.woff2),
+		 url(../fonts/kaufmann-bold.woff);
+}
+
+@font-face {
+	font-family: "Neutra Text Light";
+	src: url(../fonts/neutra-text-light.woff2),
+		 url(../fonts/neutra-text-light.woff);
 }
