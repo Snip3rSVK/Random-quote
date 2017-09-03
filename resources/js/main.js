@@ -29,8 +29,8 @@ function getJSON(url, callback) {
 }
 
 function generateQuote() {
-	const randomColorNum = Math.floor(Math.random() * (colors.length - 1));
-	const randomQuoteNum = Math.floor(Math.random() * (quotes.length - 1));
+	const randomColorNum = Math.floor(Math.random() * (colors.length));
+	const randomQuoteNum = Math.floor(Math.random() * (quotes.length));
 
 	if (randomColorNum == prevRandomNums.color || randomQuoteNum == prevRandomNums.quote) {
 		generateQuote();
