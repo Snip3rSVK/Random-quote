@@ -1,78 +1,70 @@
 html, body {
-		width: 100%;
+	width: 100%;
 	height: 100%;
 }
 
 body {
+	align-items: center;
+	color: #fff;
+	display: flex;
 	font-family: "Neutra Text Light", sans-serif;
 	font-size: 1em;
-	flex: 0 0 auto;
-	color: #fff;
-	transition: background-color 900ms cubic-bezier(.215, .61, .355, 1);
-	display: flex;
-	align-items: center;
 	justify-content: center;
+	transition: background-color 900ms cubic-bezier(.215, .61, .355, 1);
 }
 
 main {
-	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	width: 80%;
 }
 
 blockquote {
-	max-width: 70%;
-	margin: 0;
 	font-weight: 700;
-}
-
-blockquote footer {
-	display: flex;
+	margin: 0;
+	max-width: 70%;
 }
 
 #quote {
-	margin: 0;
-	font-size: 10vmin;
 	border-left: 1vmin solid #fff;
+	font-size: 10vmin;
+	margin: 0;
 	padding-left: 5vmin;
 }
 
 blockquote footer {
-	font-size: calc(4vmin + 5px);
-	font-family: "Kaufmann Bold";
+	display: flex; /* To animation, don't remove */
 	color: #232323;
+	font-family: "Kaufmann Bold";
+	font-size: calc(4vmin + 5px);
 	margin: 5vmin 0 0 6.5vmin;
 }
 
 #new-quote-btn {
+	animation: fadeIn 400ms cubic-bezier(.215, .61, .355, 1) 900ms forwards;
 	background: url("../img/icon-right-arrow.svg") no-repeat;
-	width: 18vmin;
 	height: 18vmin;
+	margin: -10vmin -5vmin 0 0;
 	opacity: 0;
-	margin-top: -10vmin;
-	margin-right: -5vmin;
-	animation: fadeIn 400ms cubic-bezier(.215, .61, .355, 1) forwards;
-	animation-delay: 900ms;
+	width: 18vmin;
 }
 
 #tweet-quote-btn {
-	background: #fff url("../img/icon-twitter.svg") no-repeat;
-	background-size: 90% 90%;
-	background-position: center;
+	animation: comeIn 500ms cubic-bezier(.215, .61, .355, 1) forwards;
+	background: #fff url("../img/icon-twitter.svg") center / 90% no-repeat;
+	height: calc(5vmin + 17px);
 	position: absolute;
 	top: 0;
-	animation: comeIn 500ms cubic-bezier(.215, .61, .355, 1) forwards;
 	width: calc(5vmin + 17px);
-	height: calc(5vmin + 17px);
 }
 
 button {
-	outline: 0;
 	border: 0;
-	padding: 0;
 	cursor: pointer;
+	outline: 0;
+	padding: 0;
 }
 
 @keyframes fadeOut {
@@ -101,9 +93,7 @@ button {
 }
 
 @media (min-width: 1380px) {
-	blockquote {
-		max-width: 50%;
-	}
+	blockquote { max-width: 50% }
 }
 
 @font-face {
