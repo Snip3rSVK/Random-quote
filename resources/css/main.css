@@ -21,25 +21,32 @@ main {
 	width: 80%;
 }
 
+blockquote, #quote { margin: 0; }
+
 blockquote {
 	font-weight: 700;
-	margin: 0;
 	max-width: 70%;
 }
 
 #quote {
 	border-left: 1vmin solid #fff;
 	font-size: 10vmin;
-	margin: 0;
 	padding-left: 5vmin;
 }
 
 blockquote footer {
-	display: flex; /* To animation, don't remove */
+	display: flex; /* Required for animation, don't remove */
 	color: #232323;
-	font-family: "Kaufmann Bold";
+	font-family: "Kaufmann Bold", serif;
 	font-size: calc(4vmin + 5px);
 	margin: 5vmin 0 0 6.5vmin;
+}
+
+button {
+	border: 0;
+	cursor: pointer;
+	outline: 0;
+	padding: 0;
 }
 
 #new-quote-btn {
@@ -60,13 +67,7 @@ blockquote footer {
 	width: calc(5vmin + 17px);
 }
 
-button {
-	border: 0;
-	cursor: pointer;
-	outline: 0;
-	padding: 0;
-}
-
+/* ----- Animations ----- */
 @keyframes fadeOut {
   	0% { opacity: 1 }
   	100% { opacity: 0 }
@@ -92,10 +93,12 @@ button {
 	100% { transform: scale(1, 0); transform-origin: bottom left }
 }
 
+/* ----- Media Queries ----- */
 @media (min-width: 1380px) {
 	blockquote { max-width: 50% }
 }
 
+/* ----- Fonts ----- */
 @font-face {
 	font-family: "Kaufmann Bold";
 	src: url(../fonts/kaufmann-bold.woff2),
