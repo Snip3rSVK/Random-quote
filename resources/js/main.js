@@ -43,7 +43,7 @@ function generateQuote() {
 		quote.setAttribute("style", "animation: fadeOut 450ms cubic-bezier(.55, .055, .675, .19) forwards");
 		author.setAttribute("style", "animation: splashOut .4s cubic-bezier(.55, .055, .675, .19) forwards");
 		setTimeout(function() {
-			body.setAttribute("style", `background: ${colors[randomColorNum]}`);
+			body.setAttribute("style", `background: linear-gradient(to right, ${colors[randomColorNum]}, ${colors[randomColorNum].replace(/\d+(?=%\))/, (match) => Number(match) + 15)}`);
 		}, 300);
 		setTimeout(function() {
 			quote.textContent = quotes[randomQuoteNum][0];
