@@ -1,4 +1,4 @@
-(function() {
+{
 	let colors = getJSON("https://raw.githubusercontent.com/Snip3rSVK/Random-quote/master/resources/json/colors.json", (data) => colors = data);
 	let quotes = getJSON("https://raw.githubusercontent.com/Snip3rSVK/Random-quote/master/resources/json/quotes.json", (data) => {
 		quotes = data.filter((curr) => curr[0].length <= 60);
@@ -60,4 +60,4 @@
 	}
 
 	newQuoteBtn.addEventListener("click", generateQuote);
-})();
+}
